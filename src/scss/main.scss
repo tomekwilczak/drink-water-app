@@ -38,7 +38,7 @@ body {
   line-height: 64px;
 }
 
-.water-glass__number {
+.water-glass__counter {
   font-style: normal;
   color: #000;
   font-weight: 500;
@@ -61,4 +61,8 @@ body {
 
 .button__remove {
   margin-top: 37px;
+}
+
+.button__remove:hover {
+  text-decoration: underline solid #fff;
 }

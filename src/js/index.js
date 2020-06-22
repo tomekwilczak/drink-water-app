@@ -5,60 +5,36 @@ import { registerSW } from "./pwa.js";
 registerSW();
 
 /* Variables definition */
-let glassesQuant = 0;
 
 const waterGlass = document.querySelector(".water-glass");
 const addButton = document.querySelector(".button__add");
 const removeButton = document.querySelector(".button__remove");
-const glasses = document.querySelector(".water-glass__number");
-const entry = localStorage.getItem("entry"); // Checking if localStorage exists
-let result = "";
+const waterGlasses = document.querySelector(".water-glass__counter");
+let glassesCount = localStorage.getItem("glasses"); // Checking if localStorage exists
 
-if (entry) {
-  result = entry;
+if (glassesCount) {
+  waterGlasses.innerHTML = glassesCount;
+} else {
+  waterGlasses.innerHTML = "0";
 }
 
-// glassesQuant.value = result;
-
 addButton.addEventListener("click", (e) => {
-  glassesQuant++;
-  glasses.innerHTML = `${glassesQuant}`;
+  glassesCount++;
+  waterGlasses.innerHTML = `${glassesCount}`;
   e.preventDefault();
-  localStorage.setItem("glasses", glassesQuant);
+  localStorage.setItem("glasses", glassesCount);
 });
 
 removeButton.addEventListener("click", (e) => {
-  if (glassesQuant > 0) {
-    glassesQuant--;
-    glasses.innerHTML = `${glassesQuant}`;
+  if (glassesCount > 0) {
+    glassesCount--;
+    waterGlasses.innerHTML = `${glassesCount}`;
     e.preventDefault();
-    localStorage.setItem("glasses", glassesQuant);
+    localStorage.setItem("glasses", glassesCount);
   } else {
-    glassesQuant = 0;
-    glasses.innerHTML = `${glassesQuant}`;
+    glassesCount = 0;
+    waterGlasses.innerHTML = `${glassesCount}`;
     e.preventDefault();
-    localStorage.setItem("glasses", glassesQuant);
+    localStorage.setItem("glasses", glassesCount);
   }
 });
-
-// // Skopiowane z simple editor
-
-// const saveButton = document.querySelector(".save-button--js");
-// const loadButton = document.querySelector(".load-button--js");
-// const clearButton = document.querySelector(".clear-button--js");
-// const deleteButton = document.querySelector(".delete-button--js");
-// const textarea = document.querySelector(".textarea--js");
-
-// // // Jeśli localStorage istnieje, to pod result podpinamy entry (wartośc z localStorage), jeśli nie, to result zostaje pusty
-
-// textarea.value = result;
-
-// loadButton.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   textarea.value = localStorage.getItem("entry");
-// });
-
-// saveButton.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   localStorage.setItem("entry", textarea.value);
-// });
