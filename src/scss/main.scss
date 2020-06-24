@@ -1,8 +1,5 @@
 @import "~normalize.css";
 
-@import "_variables";
-@import "modules/hello.scss";
-
 html {
   box-sizing: border-box;
 }
@@ -23,6 +20,7 @@ body {
   min-height: calc(100vh-16px);
   font-family: "Roboto", sans-serif;
   margin: 16px;
+  padding: 16px;
 }
 
 .main {
@@ -32,50 +30,59 @@ body {
   justify-content: center;
 }
 
-.header__title {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 55px;
-  line-height: 64px;
-  text-align: center;
+.header {
+  position: relative;
+  &__info-icon {
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+    // margin-top: px;
+    // right: 10px;
+    // top: 115px;
+    // left: 60px;
+    // margin: 0 auto;
+    float: right;
+    margin-top: -10px;
+    margin-bottom: 16px;
+  }
+  &__info-text {
+    z-index: 1000;
+    padding: 5px 20px;
+    position: absolute;
+    top: 125px;
+    left: 110px;
+    // right: 320px;
+    border: 2px dotted #fff;
+    border-radius: 2px;
+    transform: scale(1.1);
+    transition: all 1s linear 1s;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 55px;
+    line-height: 64px;
+    text-align: center;
+    margin-bottom: 35px;
+  }
 }
 
 .water-glass {
-  position: relative;
+  // position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   &__counter {
     position: absolute;
-    top: 90px;
+    margin-top: 30px;
+    // top: 9 0px;
     // // left: 108px;
     font-style: normal;
     color: #000;
     font-weight: 500;
     font-size: 112px;
     line-height: 131px;
-  }
-  &__info-icon {
-    font-size: 30px;
-    font-weight: 600;
-    color: #fff;
-    position: absolute;
-    top: 115px;
-    // left: 60px;
-    margin: 0 auto;
-  }
-  &__info-text {
-    z-index: 1000;
-    padding: 30px 20px;
-    position: absolute;
-    top: 120px;
-    left: 700px;
-    // width: 500px;
-    // height: 100px;
-    border: 2px solid #fff;
-    background: #2196f3;
-    opacity: 0.9;
-    border-radius: 10px;
   }
 }
 
@@ -96,12 +103,18 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
   margin-top: 48px;
+  transition: background 0.1s ease-out, box-shadow 0.2s linear;
+  &:hover {
+    background: #dbe9ff;
+    box-shadow: 20px 20px 60px #6098ec, -10px -10px 50px #6098ec;
+  }
 }
 
 .button__remove {
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
   margin-top: 37px;
-}
-
-.button__remove:hover {
-  text-decoration: underline solid #fff;
+  margin-bottom: 30px;
 }
