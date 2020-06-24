@@ -4,37 +4,40 @@ import "../scss/main.scss";
 import { registerSW } from "./pwa.js";
 registerSW();
 
-/* Variables definition */
+// Variables definition
 
-const waterGlass = document.querySelector(".water-glass");
 const addButton = document.querySelector(".button__add");
 const removeButton = document.querySelector(".button__remove");
 const waterGlasses = document.querySelector(".water-glass__counter");
-let glassesCount = localStorage.getItem("glasses"); // Checking if localStorage exists
+const key = new Date().toISOString().slice(0, 10);
+let glassesCount = localStorage.getItem(key);
 
-if (glassesCount) {
+// Checking if key already exists in localstorage
+if (key) {
   waterGlasses.innerHTML = glassesCount;
 } else {
   waterGlasses.innerHTML = "0";
 }
 
+// Adding another glass of water
 addButton.addEventListener("click", (e) => {
+  e.preventDefault();
   glassesCount++;
   waterGlasses.innerHTML = `${glassesCount}`;
-  e.preventDefault();
-  localStorage.setItem("glasses", glassesCount);
+  localStorage.setItem(key, glassesCount);
 });
 
+// Removing a glass of water
 removeButton.addEventListener("click", (e) => {
   if (glassesCount > 0) {
+    e.preventDefault();
     glassesCount--;
     waterGlasses.innerHTML = `${glassesCount}`;
-    e.preventDefault();
-    localStorage.setItem("glasses", glassesCount);
+    localStorage.setItem(key, glassesCount);
   } else {
     glassesCount = 0;
     waterGlasses.innerHTML = `${glassesCount}`;
     e.preventDefault();
-    localStorage.setItem("glasses", glassesCount);
+    localStorage.setItem(key, glassesCount);
   }
 });
