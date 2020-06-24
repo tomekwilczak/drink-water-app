@@ -20,8 +20,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: calc(100vh-16px);
   font-family: "Roboto", sans-serif;
+  margin: 16px;
 }
 
 .main {
@@ -36,16 +37,20 @@ body {
   font-weight: 500;
   font-size: 55px;
   line-height: 64px;
+  text-align: center;
 }
 
 .water-glass {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .water-glass__counter {
   position: absolute;
   top: 90px;
-  left: 108px;
+  // // left: 108px;
   font-style: normal;
   color: #000;
   font-weight: 500;
