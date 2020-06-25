@@ -1,4 +1,8 @@
+@import "./modules/app.scss";
+@import "./modules/buttons.scss";
+@import "./modules/glass.scss";
 @import "~normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap");
 
 html {
   box-sizing: border-box;
@@ -17,102 +21,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh-16px);
+  min-height: 100vh;
   font-family: "Roboto", sans-serif;
-  padding: 16px;
-}
-
-.app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  &__info-icon {
-    font-size: 30px;
-    font-weight: 600;
-    color: #fff;
-    // margin-top: px;
-    // right: 10px;
-    // top: 115px;
-    // left: 60px;
-    // margin: 0 auto;
-    align-self: flex-end;
-    margin-top: -15px;
-    margin-bottom: 16px;
-    margin-right: 16px;
-  }
-  &__info-text {
-    z-index: 1000;
-    padding: 5px 20px;
-    position: fixed;
-    top: 120px;
-    // left: 110px;
-    // right: 320px;
-    border: 2px dotted #fff;
-    border-radius: 2px;
-    transform: scale(1.1);
-    transition: all 1s linear 1s;
-  }
-
-  &__title {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 64px;
-    text-align: center;
-    margin-bottom: 35px;
-    @media screen and (min-width: 768px) {
-      font-size: 55px;
-    }
-  }
-}
-
-.glass {
-  // position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  &__counter {
-    position: absolute;
-    margin-top: 30px;
-    // top: 9 0px;
-    // // left: 108px;
-    font-style: normal;
-    color: #000;
-    font-weight: 500;
-    font-size: 112px;
-    line-height: 131px;
-  }
-}
-
-.info-closed {
-  display: none;
-}
-
-.button__add {
-  // position: absolute;
-  width: 216px;
-  height: 47px;
-  // left: 79px;
-  // top: 531px;
-  font-size: 18px;
-  line-height: 21px;
-  background: #ffffff;
-  border: none;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 4px;
-  margin-top: 48px;
-  transition: background 0.1s ease-out, box-shadow 0.2s linear;
-  &:hover {
-    background: #dbe9ff;
-    box-shadow: 20px 20px 60px #6098ec, -10px -10px 50px #6098ec;
-  }
-}
-
-.button__remove {
-  background: none;
-  border: none;
-  outline: none;
-  color: #fff;
-  padding-top: 16px;
 }

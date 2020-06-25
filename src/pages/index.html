@@ -25,10 +25,6 @@
       property="og:image"
       content="https://tomekwilczak.github.io/drink-water-app/drink-water-cover.png"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
-      rel="stylesheet"
-    />
     <!-- uncomment the line below to enable PWA  -->
     <link rel="manifest" href="manifest.json" />
 
@@ -159,7 +155,6 @@
   <body>
     <main class="app">
       <h1 class="app__title">drink water app</h1>
-
       <span class="app__info-icon info-icon--js">&#9432;</span>
       <span class="app__info-text info-text--js info-closed"
         >1 glass = 200 ml</span
@@ -182,10 +177,10 @@
             fill="#2196F3"
           />
         </svg>
-        <span class="glass__counter"></span>
+        <span class="glass__counter glass__counter--js">0</span>
       </div>
-      <button class="button__add">add glass</button>
-      <button class="button__remove">remove glass</button>
+      <button class="button-add button-add--js">add glass</button>
+      <button class="button-remove button-remove--js">remove glass</button>
     </main>
   </body>
 </html>
