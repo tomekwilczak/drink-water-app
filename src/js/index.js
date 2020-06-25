@@ -8,7 +8,7 @@ registerSW();
 
 const addButton = document.querySelector(".button__add");
 const removeButton = document.querySelector(".button__remove");
-const waterGlasses = document.querySelector(".water-glass__counter");
+const waterGlasses = document.querySelector(".glass__counter");
 const infoIcon = document.querySelector(".info-icon--js");
 const infoText = document.querySelector(".info-text--js");
 const key = new Date().toISOString().slice(0, 10);

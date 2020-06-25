@@ -19,19 +19,14 @@ body {
   justify-content: center;
   min-height: calc(100vh-16px);
   font-family: "Roboto", sans-serif;
-  margin: 16px;
   padding: 16px;
 }
 
-.main {
+.app {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.header {
-  position: relative;
   &__info-icon {
     font-size: 30px;
     font-weight: 600;
@@ -41,16 +36,17 @@ body {
     // top: 115px;
     // left: 60px;
     // margin: 0 auto;
-    float: right;
-    margin-top: -10px;
+    align-self: flex-end;
+    margin-top: -15px;
     margin-bottom: 16px;
+    margin-right: 16px;
   }
   &__info-text {
     z-index: 1000;
     padding: 5px 20px;
-    position: absolute;
-    top: 125px;
-    left: 110px;
+    position: fixed;
+    top: 120px;
+    // left: 110px;
     // right: 320px;
     border: 2px dotted #fff;
     border-radius: 2px;
@@ -61,14 +57,17 @@ body {
   &__title {
     font-style: normal;
     font-weight: 500;
-    font-size: 55px;
+    font-size: 40px;
     line-height: 64px;
     text-align: center;
     margin-bottom: 35px;
+    @media screen and (min-width: 768px) {
+      font-size: 55px;
+    }
   }
 }
 
-.water-glass {
+.glass {
   // position: relative;
   display: flex;
   align-items: center;
@@ -115,6 +114,5 @@ body {
   border: none;
   outline: none;
   color: #fff;
-  margin-top: 37px;
-  margin-bottom: 30px;
+  padding-top: 16px;
 }
