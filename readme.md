@@ -1,12 +1,12 @@
-![cover](https://cotenfrontend.pl/img/cover.png)
+![cover](https://tomekwilczak.github.io/drink-water-app/drink-water-cover.png)
 
-# WTF Webpack Starter Kit 
+# Drink Water App (PWA)
 
-Simple toolkit for your static websites development.
+Simple app (PWA) for tracking the amount of water drank everyday.
 
 ## How to use it?
 
-Click on `Use this template` button to generate a new repository based on this starter kit. After that clone it to your computer, go to the project directory in console and type `npm install`.
+Clone the repo to your computer, go to the project directory in console and type `npm install`. Open 'Dist' folder and run 'index.html' file. You can simply add and remove glasses of water by clicking on buttons.
 
 ## Available scripts
 
